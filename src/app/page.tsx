@@ -31,12 +31,12 @@ export default function Home() {
 						<strong>Welcome to QED42.</strong> This is the Complaints and
 						Feedback Management (CFM) application.
 					</p>
-					<Link
+					{/* <Link
 						href="/login"
 						className="flex items-center gap-5 self-start rounded-lg bg-cfm-grey px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-cfm-green hover:text-black md:text-base"
 					>
 						<span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
-					</Link>
+					</Link> */}
           <Link
 						href="/dashboard"
 						className="flex items-center gap-5 self-start rounded-lg bg-cfm-grey px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-cfm-green hover:text-black md:text-base"
