@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "@/app/ui/global.css";
 import { inter } from "@/app/ui/fonts";
 

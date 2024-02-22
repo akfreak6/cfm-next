@@ -4,11 +4,21 @@ import CfmLogo from "@/app/ui/cfm-logo";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata, Viewport } from "next";
+
+export const metadata: Metadata = {
+  manifest: "/manifest.json",
+	title: "Complaints and Feedback Management (CFM)",
+	description: "QED42 product",
+};
+export const viewport : Viewport = {
+  themeColor: "#87ea45",
+}
 
 export default function Home() {
 	return (
 		<main className="flex min-h-screen flex-col p-6">
-			<div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
+			<div className="flex h-20 shrink-0 items-end rounded-lg p-4 md:h-52" style={{backgroundColor: '#87ea45'}}>
 				<CfmLogo />
 			</div>
 			<div className="mt-4 flex grow flex-col gap-4 md:flex-row">
@@ -23,12 +33,18 @@ export default function Home() {
 					</p>
 					<Link
 						href="/login"
-						className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+						className="flex items-center gap-5 self-start rounded-lg bg-cfm-grey px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-cfm-green hover:text-black md:text-base"
 					>
 						<span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
 					</Link>
+          <Link
+						href="/dashboard"
+						className="flex items-center gap-5 self-start rounded-lg bg-cfm-grey px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-cfm-green hover:text-black md:text-base"
+          >
+						<span>Log</span> <ArrowRightIcon className="w-5 md:w-6" />
+					</Link>
 				</div>
-				<div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
+				{/* <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
 					<Image
 						src="/dashboard.png"
 						width={1000}
@@ -36,7 +52,7 @@ export default function Home() {
 						className="block"
 						alt="Screenshots of the dashboard project showing desktop version"
 					/>
-				</div>
+				</div> */}
 			</div>
 		</main>
 	);

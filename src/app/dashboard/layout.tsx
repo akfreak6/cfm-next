@@ -1,4 +1,14 @@
 import SideNav from "@/app/ui/dashboard/sidenav";
+import { Metadata, Viewport } from "next";
+
+export const metadata: Metadata = {
+  manifest: "/manifest.json",
+	title: "Complaints and Feedback Management (CFM)",
+	description: "QED42 product",
+};
+export const viewport : Viewport = {
+  themeColor: "#87ea45",
+}
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
