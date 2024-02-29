@@ -35,7 +35,7 @@ const ContentList: FC<{ content: CFM[] }> = ({ content }) => {
 								{contentList?.map((i: any, index: number) => (
 									<div
 										key={index}
-										className="grid rounded-md p-4 border border-gray-900 dark:border-gray-200 hover:shadow-md"
+										className="grid rounded-md p-4 border border-gray-900 dark:border-gray-200 hover:shadow-md dark:hover:shadow-white"
 									>
 										<div
 											className="grid"

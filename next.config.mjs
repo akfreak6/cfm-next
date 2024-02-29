@@ -8,9 +8,13 @@ const withPWA = withPWAInit({
   reloadOnOnline: true,
   swcMinify: true,
   disable: false,
-  workboxOptions: {
-    disableDevLogs: true,
-  },
+  extendDefaultRuntimeCaching: true,
+  // workboxOptions: {
+  //   runtimeCaching: true,
+  // },
+  fallbacks: {
+    document: "/src/app/~offline/page.tsx",
+  }
 });
 const nextConfig = {};
 

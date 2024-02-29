@@ -376,7 +376,7 @@ const ContentMngmt: FC = () => {
 									{contentList?.map((i: any, index: number) => (
 										<div
 											key={index}
-											className="rounded-md p-4 border border-gray-200 hover:shadow-md"
+											className="rounded-md p-4 border border-gray-900 dark:border-gray-200 hover:shadow-md dark:hover:shadow-white"
 										>
 											<div className="md:grid-col-2">
 												<h3 className="mb-2 font-bold text-lg">{i.name}</h3>
@@ -402,7 +402,10 @@ const ContentMngmt: FC = () => {
 													DELETE
 												</button>
 												<button
-													onClick={() => setContent({ ...i })}
+                          onClick={() => {
+                            setContent({ ...i }); // Existing function call
+                            //toggleInputForm();  Call the toggleInputForm function
+                          }}
 													className="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-700"
 												>
 													UPDATE
