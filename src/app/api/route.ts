@@ -1,12 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { CFM, db } from '../../../db/db.model'; // Assuming your `db.model.ts` is in the root directory
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     try {
       const { name, feedbackSubject, feedbackBody, keywords, status } = req.body;
 
       // Data validation (optional but recommended)
-      if (!name || !feedbackSubject || !feedbackBody) {
+      if (!name || !feedbackSubject || !feedbackBody || !keywords || !status) {
         return res.status(400).json({ message: 'Missing required fields!' });
       }
 
@@ -34,3 +34,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ message: 'Method not allowed' });
   }
 }
+
+
+

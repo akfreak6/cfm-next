@@ -1,22 +1,38 @@
-import Dexie, { Table } from "dexie";
-// table inteface
+// db.model.ts
+
+import Dexie, { Table } from 'dexie';
+
+// Define the CFM type (adjust as needed)
 export interface CFM {
-	id?: number;
-	name: string;
+  id?: number;
+  name: string;
   feedbackSubject: string;
-	feedbackBody: string;
-	keywords: string[];
-	status: string[];
-  createdAt?: Date; // timestamp for tracking creation
-  updatedAt?: Date; // timestamp for tracking updates
+  feedbackBody: string;
+  keywords: string[];
+  status: string[];
+  createdAt?: Date;
+  updatedAt?: Date;
 }
+
 export class DB extends Dexie {
-	content!: Table<CFM>; // table name student
-	constructor() {
-		super("myDatabase");
-		this.version(1).stores({
-			content: "++id, name, feedbackSubject, feedbackBody, keywords, status, createdAt, updatedAt",
-		});
-	}
+  content!: Table<CFM>; // Table name: content
+
+  constructor() {
+    super('myDatabase');
+    this.version(1).stores({
+      content: '++id, name, feedbackSubject, feedbackBody, keywords, status, createdAt, updatedAt',
+    });
+  }
+
+  // Implement the getAll method
+  async getAll(): Promise<CFM[]> {
+    try {
+      return await this.content.toArray();
+    } catch (error) {
+      console.error('Error fetching feedback entries:', error);
+      throw error;
+    }
+  }
 }
+
 export const db = new DB();

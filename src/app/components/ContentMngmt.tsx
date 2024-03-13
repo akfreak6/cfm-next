@@ -17,7 +17,19 @@ const ContentMngmt: FC = () => {
 		createdAt: new Date(),
 		updatedAt: new Date(),
 	});
-
+//  async function gheta(){
+//   try {
+//     const feedbackEntries = await db.getAll(); // Wait for the Promise to resolve
+//     const dta = Object.assign({}, feedbackEntries);
+//     const fback = JSON.stringify(dta);
+//     // console.log(feedbackEntries);
+//     console.log(fback);
+//   } catch (error) {
+//     console.error('Error fetching feedback entries:', error);
+//   }
+// }
+// gheta(); 
+  
 	const toggleTable = () => {
 		setShowMode(!showMode);
 		setContent({
@@ -31,7 +43,7 @@ const ContentMngmt: FC = () => {
 			updatedAt: new Date(),
 		}); // Clear form on toggle
 	};
-
+  
 	const toggleInputForm = () => {
 		setIsAddMode(!isAddMode);
 		setContent({
