@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { CFM, db } from '../../../db/db.model'; // Assuming your `db.model.ts` is in the root directory
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     try {
       const { name, feedbackSubject, feedbackBody, keywords, status } = req.body;
@@ -35,5 +35,4 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
   }
 }
 
-
-
+export { handler as POST}

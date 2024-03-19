@@ -17,18 +17,18 @@ const ContentMngmt: FC = () => {
 		createdAt: new Date(),
 		updatedAt: new Date(),
 	});
-//  async function gheta(){
-//   try {
-//     const feedbackEntries = await db.getAll(); // Wait for the Promise to resolve
-//     const dta = Object.assign({}, feedbackEntries);
-//     const fback = JSON.stringify(dta);
-//     // console.log(feedbackEntries);
-//     console.log(fback);
-//   } catch (error) {
-//     console.error('Error fetching feedback entries:', error);
-//   }
-// }
-// gheta(); 
+ async function eta(){
+  try {
+    const feedbackEntries = await db.getAll(); // Wait for the Promise to resolve
+    const dta = Object.assign({}, feedbackEntries);
+    const fback = JSON.stringify(dta);
+    // console.log(feedbackEntries);
+    console.log(feedbackEntries);
+  } catch (error) {
+    console.error('Error fetching feedback entries:', error);
+  }
+}
+eta(); 
   
 	const toggleTable = () => {
 		setShowMode(!showMode);

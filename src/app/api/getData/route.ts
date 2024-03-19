@@ -15,7 +15,7 @@ db.open().then(function() {
     }
   });
 }).catch(console.error);
-console.log(exportedJsonString);
+
 const GET = async () => {
   try {
     if (exportedJsonString) {
