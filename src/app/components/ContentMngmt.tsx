@@ -17,18 +17,18 @@ const ContentMngmt: FC = () => {
 		createdAt: new Date(),
 		updatedAt: new Date(),
 	});
- async function eta(){
-  try {
-    const feedbackEntries = await db.getAll(); // Wait for the Promise to resolve
-    const dta = Object.assign({}, feedbackEntries);
-    const fback = JSON.stringify(dta);
-    // console.log(feedbackEntries);
-    console.log(feedbackEntries);
-  } catch (error) {
-    console.error('Error fetching feedback entries:', error);
-  }
-}
-eta(); 
+//  async function eta(){
+//   try {
+//     const feedbackEntries = await db.getAll(); // Wait for the Promise to resolve
+//     const dta = Object.assign({}, feedbackEntries);
+//     const fback = JSON.stringify(dta);
+//     // console.log(feedbackEntries);
+//     console.log(feedbackEntries);
+//   } catch (error) {
+//     console.error('Error fetching feedback entries:', error);
+//   }
+// }
+// eta(); 
   
 	const toggleTable = () => {
 		setShowMode(!showMode);
@@ -104,6 +104,11 @@ eta();
 					status: content.status,
 					createdAt: new Date(),
 				});
+        await fetch('./../api/add-content.ts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(content)
+        });
 				setContent({
 					name: "",
 					feedbackSubject: "",

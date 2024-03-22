@@ -1,4 +1,6 @@
-const sqlite3 = require('sqlite3').verbose();
+import sqlite3 from 'sqlite3';
+
+const sqlite = sqlite3.verbose();
 
 let db;
 
@@ -9,7 +11,7 @@ export function connectToDb() {
       return;
     }
 
-    db = new sqlite3.Database('sql.db', (err) => {
+    db = new sqlite.Database('/collection.db', (err) => {
       if (err) {
         reject(err);
         return;

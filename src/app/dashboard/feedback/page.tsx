@@ -1,6 +1,5 @@
 'use client';
 import ContentMngmt from "@/app/components/ContentMngmt";
-import StudentMngmt from "@/app/components/ContentMngmt";
 import { lusitana } from "@/app/ui/fonts";
 export default function Page() {
 	return (
